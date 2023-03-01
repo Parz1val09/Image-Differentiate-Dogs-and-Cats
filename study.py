@@ -8,13 +8,6 @@ from keras.models import Sequential
 from keras.layers import Activation, Dropout, Flatten, Conv2D, MaxPooling2D, Dense
 from keras.optimizers import Adam
 
-import tensorflow as tf
-
-# Evitar erros OOM por consumo em acesso da memória da GPU
-gpus = tf.config.experimental.list_physical_devices('GPU')
-for gpu in gpus: 
-    tf.config.experimental.set_memory_growth(gpu, True)
-
 # Load and preprocess example images
 cat4 = cv2.imread('data/train/CAT/4.jpg')
 cat4 = cv2.cvtColor(cat4, cv2.COLOR_BGR2RGB)
